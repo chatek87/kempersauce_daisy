@@ -1,0 +1,25 @@
+Make sure you installed the DaisyToolchain (i think you already did, should be in program files)
+go to
+Advanced system settings -> environment variables 
+Under "system variables" select "path", click "Edit..."
+in the popup, click New and add the following path:
+C:\Program Files\DaisyToolchain\bin\
+(That should be the default installation location for the toolchain)
+
+in vs code, once you open an example,
+go to the microsoft c/c++ extension
+head down to "compiler path" and add this path:
+C:/Program Files/DaisyToolchain/bin/g++.exe
+
+in the root dir, there's the helper.py file.
+cd into myprojects and run python something like this 
+"../helper.py create my_pod_project -b pod -l ../"
+and it'll set up a new project, all ready to go. 
+theres more info in helper.py comments about all the command line arguments
+
+
+worked for me
+¯\_(ツ)_/¯
+
+
+
