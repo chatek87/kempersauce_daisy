@@ -116,5 +116,6 @@ int main(void)
     hardware.StartAudio(AudioCallback);
 
     // Loop forever
-    for(;;) {}
+    // for(;;) {}
+    while(true);
 }

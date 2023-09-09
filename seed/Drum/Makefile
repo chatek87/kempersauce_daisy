@@ -1,8 +1,10 @@
 # Project Name
 TARGET = Drum
+# TARGET = Dumb
 
 # Sources
 CPP_SOURCES = Drum.cpp
+# CPP_SOURCES = Dumb.cpp
 
 # Library Locations
 LIBDAISY_DIR = ../../libDaisy
