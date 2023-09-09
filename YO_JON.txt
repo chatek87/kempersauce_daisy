@@ -12,8 +12,8 @@ head down to "compiler path" and add this path:
 C:/Program Files/DaisyToolchain/bin/g++.exe
 
 in the root dir, there's the helper.py file.
-cd into myprojects and run python something like this 
-"../helper.py create my_pod_project -b pod -l ../"
+cd into myprojects and run something like this 
+"python ../helper.py create my_pod_project -b pod -l ../"
 and it'll set up a new project, all ready to go. 
 theres more info in helper.py comments about all the command line arguments
 
