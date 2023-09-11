@@ -1,10 +1,10 @@
 # Project Name
-# TARGET = SimpleOscillator
-TARGET = DuoOscillator
+TARGET = SimpleOscillator
+# TARGET = DuoOscillator
 
 # Sources
-# CPP_SOURCES = SimpleOscillator.cpp
-CPP_SOURCES = DuoOscillator.cpp
+CPP_SOURCES = SimpleOscillator.cpp
+# CPP_SOURCES = DuoOscillator.cpp
 
 # Library Locations
 LIBDAISY_DIR = ../../libDaisy
