@@ -1,8 +1,8 @@
 # Project Name
-TARGET = test2
+TARGET = test5
 
 # Sources
-CPP_SOURCES = test2.cpp
+CPP_SOURCES = test5.cpp
 
 # Library Locations
 LIBDAISY_DIR = ../../libDaisy/

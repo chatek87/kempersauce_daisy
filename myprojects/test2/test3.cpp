@@ -1,4 +1,4 @@
-// the main code was taken from the 'musicbox' example for daisy pod
+// Include necessary headers
 #include "daisy_pod.h"
 #include "daisysp.h"
 #include <math.h>
@@ -13,26 +13,27 @@ ReverbSc   verb;
 AdEnv      env;
 Parameter  p_xf, p_vamt, p_dec, p_vtime;
 
-// const static float scale[7] = {0, 2, 4, 5, 7, 9, 11};
-// const static float scale[7] = {0, 1, 1, 1, 0, 1, 0};
-// const static float scale[5] = {0, 4, 5, 7, 11};
-const static float scale[1] = {0};
+// Define the scale and the current note index
+const static float scale[5] = {12, 9, 9, 9, 7}; // Change the scale as needed
+static int         current_note_index = 0;
 
+// Function to get the next note in the cycle
 static float get_new_note()
 {
-    int32_t val, oct, idx;
-    val = myrand() % 14;
-    oct = val / 7;
-    idx = val % 7;
-    return scale[idx] + (12 * oct);
+    float note = scale[current_note_index];
+    current_note_index
+        = (current_note_index + 1) % 5; // Cycling through 5 notes
+    return note;
 }
 
 static float freq;
 float        sig, rawsig, filtsig, sendsig, wetvl, wetvr;
 float        xf, vamt, dec, time;
-static void  audio(AudioHandle::InterleavingInputBuffer  in,
-                   AudioHandle::InterleavingOutputBuffer out,
-                   size_t                                size)
+
+// Audio callback function
+static void audio(AudioHandle::InterleavingInputBuffer  in,
+                  AudioHandle::InterleavingOutputBuffer out,
+                  size_t                                size)
 {
     hw.ProcessDigitalControls();
     if(hw.button1.RisingEdge())
@@ -63,6 +64,7 @@ static void  audio(AudioHandle::InterleavingInputBuffer  in,
     }
 }
 
+// Initialization function
 void InitSynth(float samplerate)
 {
     // Synth Parameters.
