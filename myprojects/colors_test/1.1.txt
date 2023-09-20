@@ -23,40 +23,15 @@ static Color color2;
 bool         ledSwitcher = false; // Flag to toggle between LED1 and LED2
 
 
-void ToggleLEDSelection()
+void AudioCallback(AudioHandle::InputBuffer  in,
+                   AudioHandle::OutputBuffer out,
+                   size_t                    size)
 {
     if(hw.encoder.FallingEdge())
     {
         ledSwitcher
             = !ledSwitcher; // Toggle the LED selection when encoder button is pressed and released.
     }
-}
-
-void AdjustBlue(float *blueValue)
-{
-    if(hw.encoder.Increment() == 1)
-    {
-        *blueValue += 0.1f;
-        if(*blueValue > 1.0f)
-        {
-            *blueValue = 1.0f;
-        }
-    }
-    if(hw.encoder.Increment() == -1)
-    {
-        *blueValue -= 0.1f;
-        if(*blueValue < 0.0f)
-        {
-            *blueValue = 0.0f;
-        }
-    }
-}
-
-void AudioCallback(AudioHandle::InputBuffer  in,
-                   AudioHandle::OutputBuffer out,
-                   size_t                    size)
-{
-    ToggleLEDSelection();
 
     float knob1Pos = hw.knob1.GetRawFloat();
     float knob2Pos = hw.knob2.GetRawFloat();
@@ -82,7 +57,22 @@ void AudioCallback(AudioHandle::InputBuffer  in,
             greenValue1 = hw.knob2.GetRawFloat();
         }
 
-        AdjustBlue(&blueValue1);
+        if(hw.encoder.Increment() == 1)
+        {
+            blueValue1 += 0.1f;
+            if(blueValue1 > 1.0f)
+            {
+                blueValue1 = 1.0f;
+            }
+        }
+        if(hw.encoder.Increment() == -1)
+        {
+            blueValue1 -= 0.1f;
+            if(blueValue1 < 0.0f)
+            {
+                blueValue1 = 0.0f;
+            }
+        }
 
         color1.Init(redValue1, greenValue1, blueValue1);
 
@@ -110,9 +100,23 @@ void AudioCallback(AudioHandle::InputBuffer  in,
             // when ledSwitcher was false (previous state, editing led1)
             greenValue2 = hw.knob2.GetRawFloat();
         }
-
-        AdjustBlue(&blueValue2);
-
+        // Adjusting LED2
+        if(hw.encoder.Increment() == 1)
+        {
+            blueValue2 += 0.1f;
+            if(blueValue2 > 1.0f)
+            {
+                blueValue2 = 1.0f;
+            }
+        }
+        if(hw.encoder.Increment() == -1)
+        {
+            blueValue2 -= 0.1f;
+            if(blueValue2 < 0.0f)
+            {
+                blueValue2 = 0.0f;
+            }
+        }
 
         color2.Init(redValue2, greenValue2, blueValue2);
 

@@ -3,6 +3,7 @@ TARGET = colors_test
 
 # Sources
 CPP_SOURCES = colors_test.cpp
+# CPP_SOURCES = scratch.cpp
 
 # Library Locations
 LIBDAISY_DIR = ../../libDaisy/
