@@ -64,6 +64,7 @@ void AudioCallback(AudioHandle::InputBuffer  in,
     if(!ledSwitcher)
     {
         // Adjusting LED1
+		// AdjustRed(&redValue1);
         if(fabs(knob1Pos - redValue1) <= tolerance)
         {
             editRed = true;
@@ -90,6 +91,7 @@ void AudioCallback(AudioHandle::InputBuffer  in,
     }
     else
     {
+		// AdjustRed();
         if(fabs(knob2Pos - redValue2) <= tolerance)
         {
             editRed = true;

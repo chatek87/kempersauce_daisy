@@ -3,6 +3,7 @@
         "*.tcc": "cpp",
         "bitset": "cpp",
         "fstream": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "cmath": "cpp"
     }
 }
