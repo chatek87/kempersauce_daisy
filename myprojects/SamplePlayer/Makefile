@@ -1,8 +1,8 @@
 # Project Name
-TARGET = WavPlayer_pod_test1
+TARGET = SamplePlayer
 
 # Sources
-CPP_SOURCES = WavPlayer_pod_test1.cpp
+CPP_SOURCES = SamplePlayer.cpp
 
 # Library Locations
 LIBDAISY_DIR = ../../libDaisy/

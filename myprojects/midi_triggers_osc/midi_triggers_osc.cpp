@@ -44,6 +44,7 @@ void HandleMidiMessage(MidiEvent m)
             {
                 if(p.velocity > 0) // Note is turned on
                 {
+                    // osc.SetFreq(440);
                     osc.SetFreq(mtof(p.note));
                     osc.SetAmp((p.velocity / 127.0f));
                     middleCNoteOn = true;

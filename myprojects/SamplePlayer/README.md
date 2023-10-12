@@ -1,4 +1,4 @@
-# WavPlayer_pod_test1
+# sample_player
 
 ## Author
 
