@@ -1,9 +1,10 @@
 # Project Name
-# TARGET = SimpleButton
-TARGET = ColorsButton
+TARGET = SimpleButton
+# TARGET = ColorsButton
+
 # Sources
-# CPP_SOURCES = SimpleButton.cpp
-CPP_SOURCES = ColorsButton.cpp
+CPP_SOURCES = SimpleButton.cpp
+# CPP_SOURCES = ColorsButton.cpp
 
 # Library Locations
 LIBDAISY_DIR = ../../libDaisy

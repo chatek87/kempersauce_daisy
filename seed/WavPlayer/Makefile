@@ -1,8 +1,11 @@
 # Project Name
 TARGET = WavPlayer
+# TARGET = test
+
 
 # Sources
 CPP_SOURCES = WavPlayer.cpp
+# CPP_SOURCES = test.cpp
 
 # Library Locations
 LIBDAISY_DIR = ../../libDaisy

@@ -12,7 +12,8 @@ ReverbSc   verb;
 AdEnv      env;
 Parameter  p_xf, p_vamt, p_dec, p_vtime;
 
-const static float scale[7] = {0, 2, 4, 5, 7, 9, 11};
+// const static float scale[7] = {0, 2, 4, 5, 7, 9, 11};
+const static float scale[3] = {0, 7, 11};
 
 static float get_new_note()
 {
@@ -69,7 +70,8 @@ void InitSynth(float samplerate)
     dec = 0.62;
     // Init Osc and Nse
     osc.Init(samplerate);
-    osc.SetWaveform(Oscillator::WAVE_POLYBLEP_SAW);
+    // osc.SetWaveform(Oscillator::WAVE_POLYBLEP_SAW);
+    osc.SetWaveform(Oscillator::WAVE_POLYBLEP_TRI);
     osc.SetFreq(100.0f);
     osc.SetAmp(.5f);
     env.Init(samplerate);
