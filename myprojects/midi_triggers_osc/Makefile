@@ -2,7 +2,8 @@
 TARGET = midi_triggers_osc
 
 # Sources
-CPP_SOURCES = midi_triggers_osc.cpp
+# CPP_SOURCES = midi_triggers_osc.cpp
+CPP_SOURCES = midi_triggers_20.cpp
 # CPP_SOURCES = midi.cpp
 
 # Library Locations
